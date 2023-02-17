@@ -1,4 +1,4 @@
-expname = llff_trex_f
+expname = llff_trex_rvs_f
 basedir = ./logs
 datadir = ./data/nerf_llff_data/trex
 dataset_type = llff
@@ -14,4 +14,8 @@ use_viewdirs = True
 raw_noise_std = 0.0
 
 i_testset = 25000
+
+rvs = True
+
+lrate_coarse = 5e-5
 
