@@ -17,4 +17,3 @@ precrop_iters = 500
 precrop_frac = 0.5
 
 i_testset = 25000
-i_video = 25000

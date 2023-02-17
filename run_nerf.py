@@ -187,7 +187,10 @@ def render_path(render_poses, hwf, K, chunk, render_kwargs, gt_imgs=None, savedi
             imageio.imwrite(filename, rgb8)
             
             if gt_imgs is not None:
-                rgb8 = to8b(gt_imgs[i])
+                if type(gt_imgs[i]) == torch.Tensor:
+                    rgb8 = to8b(gt_imgs[i].cpu().numpy())
+                else:
+                    rgb8 = to8b(gt_imgs[i])
                 filename = os.path.join(savedir, 'gt_{:03d}.png'.format(i))
                 imageio.imwrite(filename, rgb8)
 
