@@ -6,7 +6,7 @@ import torch
 from piqa.lpips import LPIPS
 from piqa.ssim import SSIM
 
-device = "cuda:0"
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 ssim_model = None
 lpips_model = None
 
